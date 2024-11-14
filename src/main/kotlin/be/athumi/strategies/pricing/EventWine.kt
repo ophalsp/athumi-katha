@@ -4,6 +4,9 @@ import be.athumi.strategies.PricingStrategy
 
 class EventWine : PricingStrategy {
     override fun calculateNewPrice(price: Int, expiresInYears: Int): Int {
+        if (expiresInYears < 0) {
+            return 0
+        }
         var newPrice = incrementPrice(price, 1)
         if (expiresInYears < 7) {
             newPrice = incrementPrice(newPrice, 1)
@@ -11,14 +14,10 @@ class EventWine : PricingStrategy {
         if (expiresInYears < 2) {
             newPrice = incrementPrice(newPrice, 2)
         }
-        if (expiresInYears < 0) {
-            newPrice = 0
-        }
         return newPrice
     }
 
     private fun incrementPrice(price: Int, increment: Int): Int {
         return (price + increment).coerceAtMost(100)
     }
-
 }

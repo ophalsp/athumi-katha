@@ -8,11 +8,9 @@ class StandardWine : PricingStrategy {
         if (expiresInYears < 0) {
             newPrice -= 1
         }
-
         if (newPrice < 0) {
             newPrice = 0
         }
         return newPrice
     }
-
 }
