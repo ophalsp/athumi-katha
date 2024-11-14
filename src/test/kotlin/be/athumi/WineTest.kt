@@ -24,7 +24,7 @@ class WineTest {
             "Standard Wine", "Bourdeaux Conservato", "Bourgogne Conservato", "Another Standard Wine",
             "Wine brewed by Alexander the Great", "Event Wine", "Eco Brilliant Wine"
         )
-        val winePrices = arrayOf(-1, 0, 7, 20, 99, 101)
+        val winePrices = arrayOf(-1, 0, 7, 20, 99, 100)
         val wineExpiresInYears = arrayOf(-1, 0, 1, 2, 3, 5, 10, 15)
         verifyAllCombinations(
             { wineName, winePrice, wineExpiresIn ->
