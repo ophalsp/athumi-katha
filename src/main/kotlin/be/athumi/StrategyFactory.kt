@@ -19,6 +19,8 @@ class StrategyFactory {
             AgingWine()
         } else if (wine.name.startsWith("Event")) {
             EventWine()
+        } else if (wine.name.contains("Eco")) {
+            EcoWine()
         } else {
             StandardWine()
         }

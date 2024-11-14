@@ -18,9 +18,6 @@ class EventWine : PricingStrategy {
     }
 
     private fun incrementPrice(price: Int, increment: Int): Int {
-        if (price > 100) {
-            return price
-        }
         return (price + increment).coerceAtMost(100)
     }
 
