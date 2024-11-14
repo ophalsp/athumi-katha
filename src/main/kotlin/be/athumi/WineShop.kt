@@ -12,6 +12,8 @@ class WineShop(var items: List<Wine>) {
                     incrementPriceForAgingWine(wine)
                 } else if (wine.name.startsWith("Event")) {
                     incrementPriceForEventWine(wine)
+                } else if (wine.name.contains("Eco")) {
+                    decrementPriceForEcoWine(wine)
                 } else {
                     decrementPriceForStandardWine(wine)
                 }
@@ -26,6 +28,13 @@ class WineShop(var items: List<Wine>) {
         wine.price -= 1
         if (wine.expiresInYears < 0) {
             wine.price -= 1
+        }
+    }
+
+    private fun decrementPriceForEcoWine(wine: Wine) {
+        wine.price -= 2
+        if (wine.expiresInYears < 0) {
+            wine.price -= 2
         }
     }
 
